@@ -1,0 +1,536 @@
+/* ===========================================
+   AP Computer Science A – Digital Curriculum Hub
+   Stylesheet
+   =========================================== */
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2c3e50;
+  background-color: #f8f9fa;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4 {
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+a {
+  color: #1a5276;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ── Layout Utility ── */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 64px 0;
+}
+
+section:nth-child(even) {
+  background-color: #ffffff;
+}
+
+/* ── Navigation ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #1a3a5c;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.nav-brand {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #cce0f5;
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* ── Hero / Home ── */
+#home {
+  background: linear-gradient(135deg, #1a3a5c 0%, #2471a3 100%);
+  color: #ffffff;
+  padding: 96px 0 80px;
+  text-align: center;
+}
+
+#home h1 {
+  font-size: 2.6rem;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+#home .subtitle {
+  font-size: 1.25rem;
+  color: #aed6f1;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+
+#home .overview-text {
+  max-width: 720px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: #d6eaf8;
+  line-height: 1.7;
+}
+
+/* ── Section Titles ── */
+.section-title {
+  font-size: 1.75rem;
+  color: #1a3a5c;
+  margin-bottom: 8px;
+}
+
+.section-divider {
+  width: 50px;
+  height: 4px;
+  background-color: #2471a3;
+  border: none;
+  margin: 0 0 32px 0;
+  border-radius: 2px;
+}
+
+/* ── Course Overview ── */
+#overview ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+}
+
+#overview ul li {
+  background: #eaf4fd;
+  border-left: 4px solid #2471a3;
+  padding: 14px 18px;
+  border-radius: 0 6px 6px 0;
+  font-size: 0.95rem;
+}
+
+/* ── Prerequisites ── */
+#prerequisites ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 600px;
+}
+
+#prerequisites ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #ffffff;
+  border: 1px solid #d5e8f7;
+  border-radius: 6px;
+  padding: 12px 18px;
+  font-size: 0.95rem;
+}
+
+#prerequisites ul li::before {
+  content: "✓";
+  color: #1e8449;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Units Grid ── */
+#units .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.unit-card {
+  background: #ffffff;
+  border: 1px solid #d5e8f7;
+  border-top: 4px solid #2471a3;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s, transform 0.2s;
+}
+
+.unit-card:hover {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+}
+
+.unit-card .unit-number {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2471a3;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.unit-card h3 {
+  font-size: 1rem;
+  color: #1a3a5c;
+}
+
+.unit-card p {
+  font-size: 0.88rem;
+  color: #5d6d7e;
+  flex: 1;
+}
+
+.unit-card .btn {
+  display: inline-block;
+  margin-top: 4px;
+  padding: 8px 14px;
+  background-color: #2471a3;
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+  border-radius: 4px;
+  text-align: center;
+  cursor: default;
+  transition: background-color 0.2s;
+}
+
+.unit-card .btn:hover {
+  background-color: #1a5276;
+  text-decoration: none;
+}
+
+/* ── Big Ideas ── */
+#big-ideas .ideas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.idea-card {
+  background: linear-gradient(145deg, #1a3a5c, #2471a3);
+  color: #ffffff;
+  border-radius: 10px;
+  padding: 28px 24px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+}
+
+.idea-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+
+.idea-card p {
+  font-size: 0.88rem;
+  color: #d6eaf8;
+  line-height: 1.6;
+}
+
+/* ── Computational Thinking Practices ── */
+#practices .practices-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 750px;
+}
+
+.practice-item {
+  background: #ffffff;
+  border: 1px solid #d5e8f7;
+  border-left: 5px solid #1e8449;
+  border-radius: 0 8px 8px 0;
+  padding: 16px 20px;
+}
+
+.practice-item h3 {
+  font-size: 1rem;
+  color: #1a3a5c;
+  margin-bottom: 4px;
+}
+
+.practice-item p {
+  font-size: 0.88rem;
+  color: #5d6d7e;
+}
+
+/* ── Exam Structure ── */
+#exam .exam-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 8px;
+}
+
+.exam-section-card {
+  background: #ffffff;
+  border: 1px solid #d5e8f7;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.exam-section-card h3 {
+  font-size: 1.1rem;
+  color: #1a3a5c;
+  margin-bottom: 16px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eaf4fd;
+}
+
+.exam-section-card .stat-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.92rem;
+  padding: 6px 0;
+  border-bottom: 1px solid #f0f3f4;
+  color: #2c3e50;
+}
+
+.exam-section-card .stat-row:last-of-type {
+  border-bottom: none;
+}
+
+.exam-section-card .stat-label {
+  color: #5d6d7e;
+}
+
+.frq-topics {
+  margin-top: 16px;
+}
+
+.frq-topics h4 {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #5d6d7e;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 8px;
+}
+
+.frq-topics ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.frq-topics ul li {
+  font-size: 0.88rem;
+  padding: 5px 10px;
+  background: #eaf4fd;
+  border-radius: 4px;
+  color: #1a3a5c;
+}
+
+/* ── Sample Question ── */
+#sample .sample-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.sample-card {
+  background: #ffffff;
+  border: 1px solid #d5e8f7;
+  border-radius: 10px;
+  padding: 28px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.sample-card .tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: #eaf4fd;
+  color: #2471a3;
+  border-radius: 4px;
+  padding: 3px 10px;
+  margin-bottom: 14px;
+}
+
+.sample-card h3 {
+  font-size: 1rem;
+  color: #1a3a5c;
+  margin-bottom: 12px;
+}
+
+.sample-card p {
+  font-size: 0.9rem;
+  color: #2c3e50;
+  margin-bottom: 12px;
+}
+
+.sample-card .code-block {
+  background: #1e2a38;
+  color: #a8d8ea;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.85rem;
+  padding: 14px 16px;
+  border-radius: 6px;
+  margin-bottom: 14px;
+  overflow-x: auto;
+  line-height: 1.5;
+}
+
+.answer-choices {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.answer-choices li {
+  font-size: 0.88rem;
+  padding: 7px 12px;
+  border: 1px solid #d5e8f7;
+  border-radius: 4px;
+  color: #2c3e50;
+}
+
+.answer-choices li.correct {
+  background: #eafaf1;
+  border-color: #a9dfbf;
+  color: #1e8449;
+  font-weight: 600;
+}
+
+/* ── Resources ── */
+#resources .resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 20px;
+  margin-top: 8px;
+}
+
+.resource-card {
+  background: #ffffff;
+  border: 1px solid #d5e8f7;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.resource-card h3 {
+  font-size: 1rem;
+  color: #1a3a5c;
+  margin-bottom: 10px;
+}
+
+.resource-card a {
+  display: inline-block;
+  font-size: 0.88rem;
+  word-break: break-all;
+  color: #2471a3;
+}
+
+/* ── Footer ── */
+footer {
+  background-color: #1a3a5c;
+  color: #aed6f1;
+  text-align: center;
+  padding: 28px 24px;
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+footer strong {
+  color: #ffffff;
+}
+
+footer a {
+  color: #aed6f1;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  #home h1 {
+    font-size: 1.9rem;
+  }
+
+  .nav-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .nav-links {
+    gap: 2px;
+  }
+
+  section {
+    padding: 48px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  #home h1 {
+    font-size: 1.5rem;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+    padding: 5px 7px;
+  }
+}
